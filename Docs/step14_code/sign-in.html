@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="AWS Serverless Web App tutorial">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta name="author" content="Mr. Coxall">
+    <meta name="date" content="Jan 2020">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--Google's MDL-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.brown-indigo.min.css" /> 
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    
+    <!--Cognito & JavaScript-->
+  	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  	<script src="js/amazon-cognito-auth.min.js"></script>
+  	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.596.0.min.js"></script> 
+  	<script src="./js/amazon-cognito-identity.min.js"></script>   
+  	<script src="./js/config.js"></script>
+  	<script type="text/javascript" src="./js/sign-in.js"></script>
+    
+    <title>Chocolates</title>
+  </head>
+  
+  <body>
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Chocolates</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation. We hide it in small screens. -->
+          <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <a class="mdl-navigation__link" href="./index.html">Home</a>
+            <a class="mdl-navigation__link" href="./products.html">Product</a>
+            <a class="mdl-navigation__link" href="./sign-in.html">Sign In</a>
+            <a class="mdl-navigation__link" href="./sign-out.html">Sign Out</a>
+            <a class="mdl-navigation__link" href="./about.html">About</a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Chocolates</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="./index.html">Home</a>
+          <a class="mdl-navigation__link" href="./products.html">Product</a>
+          <a class="mdl-navigation__link" href="./sign-in.html">Sign In</a>
+          <a class="mdl-navigation__link" href="./sign-out.html">Sign Out</a>
+          <a class="mdl-navigation__link" href="./about.html">About</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <div class="page-content"><!-- Your content goes here --></div>
+      </main>
+    </div>
+    
+    <!--Get below the nav menu at the top-->
+    <br><br><br>
+    
+		<div class="container">
+      <div>
+        <h2>Sign In</h2>
+        <div id='sign-in'>
+        </div>
+      </div>
+		</div>
+    
+    <div class="mdl-layout mdl-js-layout mdl-color--grey-100">
+    	<main class="mdl-layout__content">
+    		<div class="mdl-card mdl-shadow--6dp">
+    			<div class="mdl-card__title mdl-color--primary mdl-color-text--white">
+    				<h2 class="mdl-card__title-text">Chocolate Login</h2>
+    			</div>
+    	  	<div class="mdl-card__supporting-text">
+    				<form action="#">
+    					<div class="mdl-textfield mdl-js-textfield">
+    						<input class="mdl-textfield__input" type="text" id="inputUsername" />
+    						<label class="mdl-textfield__label" for="username">Email Address</label>
+    					</div>
+    					<div class="mdl-textfield mdl-js-textfield">
+    						<input class="mdl-textfield__input" type="password" id="inputPassword" />
+    						<label class="mdl-textfield__label" for="userpass">Password</label>
+    					</div>
+    				</form>
+    			</div>
+    			<div class="mdl-card__actions mdl-card--border">
+    				<button class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" onclick="signInButton();">Log in</button>
+    			</div>
+    		</div>
+    	</main>
+    </div>
+    
+    <div class="container">
+      <div>
+        <div id='logged-in'>
+          <p></p>
+        </div>
+      </div>
+		</div>
+
+  </body>
+</html>
